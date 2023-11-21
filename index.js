@@ -22,3 +22,12 @@ const studentSchema = new mongoose.Schema({
 // creating model
 // model in mongoose is a class with which we construct documents.
 const Student = mongoose.model("Student", studentSchema);
+
+// student1 document
+const student1 = new Student({
+  name: "Sam",
+  email: "sam@gmail.com",
+  age: 25,
+});
+
+student1.save();
