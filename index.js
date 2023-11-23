@@ -24,10 +24,17 @@ const studentSchema = new mongoose.Schema({
 const Student = mongoose.model("Student", studentSchema);
 
 // student1 document
-const student1 = new Student({
-  name: "Sam",
-  email: "sam@gmail.com",
-  age: 25,
-});
+// const student1 = new Student({
+//   name: "Sam",
+//   email: "sam@gmail.com",
+//   age: 25,
+// });
 
-student1.save();
+// student1.save();
+
+// inserting multiple documents in collection
+Student.insertMany([
+  { name: "Thor", email: "thor@gmail.com", age: 30 },
+  { name: "Noor", email: "noor@hotmail.com", age: 28 },
+  { name: "Soni", email: "soni@gmail.com", age: 30 },
+]);
