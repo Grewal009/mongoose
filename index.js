@@ -40,10 +40,19 @@ const Student = mongoose.model("Student", studentSchema);
 // ]);
 
 // find documents where age >= 30
-Student.find({ age: { $gte: 30 } })
-  .then((res) => {
-    console.log(res);
-  })
-  .catch((err) => {
-    console.log(err);
-  });
+// Student.find({ age: { $gte: 30 } })
+//   .then((res) => {
+//     console.log(res);
+//   })
+//   .catch((err) => {
+//     console.log(err);
+//   });
+
+// update document where name: "soni" set email:soni@soni.in
+Student.updateOne(
+  { name: "Soni" },
+  { email: "soni@soni.in" },
+  { new: true }
+).then((res) => {
+  console.log(res);
+});
