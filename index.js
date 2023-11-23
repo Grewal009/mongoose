@@ -33,8 +33,17 @@ const Student = mongoose.model("Student", studentSchema);
 // student1.save();
 
 // inserting multiple documents in collection
-Student.insertMany([
-  { name: "Thor", email: "thor@gmail.com", age: 30 },
-  { name: "Noor", email: "noor@hotmail.com", age: 28 },
-  { name: "Soni", email: "soni@gmail.com", age: 30 },
-]);
+// Student.insertMany([
+//   { name: "Thor", email: "thor@gmail.com", age: 30 },
+//   { name: "Noor", email: "noor@hotmail.com", age: 28 },
+//   { name: "Soni", email: "soni@gmail.com", age: 30 },
+// ]);
+
+// find documents where age >= 30
+Student.find({ age: { $gte: 30 } })
+  .then((res) => {
+    console.log(res);
+  })
+  .catch((err) => {
+    console.log(err);
+  });
